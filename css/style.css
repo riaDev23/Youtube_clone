@@ -1,5 +1,225 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-video {
-  display: none;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button,
+button:focus {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  background: #000;
+  color: #fff;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo i {
+  color: red;
+  font-size: 1.5em;
+}
+/* ? ########## video player ########## */
+.player {
+  position: sticky;
+  top: 0;
+  text-align: center;
+  background: #000;
+}
+
+.player video {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+}
+
+.infoAndUpNext {
+  padding: 12px;
+}
+
+/* ? ########## Meta Data ########## */
+.info .metadata .hashtags {
+  display: flex;
+  font-size: .8em;
+  color: deepskyblue;
+  gap: 1em;
+}
+
+.titleAndButton {
+  display: flex;
+  gap: 1em;
+}
+
+.titleAndButton .title {
+  font-size: .9em;
+  font-weight: 600;
+  
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.titleAndButton .moreBtn {
+  height: 100%;
+}
+
+.metadata .views {
+  font-size: .8em;
+  color: #aaa;
+}
+
+/* ? ########## action buuttons ########## */
+.info .actions {
+  display: flex;
+  justify-content: space-around;
+  margin: 1em 0;
+}
+
+.info .actions button {
+  background: none;
+}
+
+.info .actions i {
+  margin-bottom: .5em;
+}
+
+.info .actions * {
+  color: #aaa;
+}
+
+.info .actions button i.active {
+  color: dodgerblue;
+}
+
+/* ? ########## Channel description ########## */
+.info .channel {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+}
+
+.info .channel .metadata {
+  display: flex;
+  gap: 1em;
+  justify-content: start;
+  align-items: center;
+  padding: .4em;
+}
+
+.info .channel .metadata img{
+  width: 35px;
+}
+
+.info .channel .metadata .info {
+  display: flex;
+  flex-direction: column;
+  font-size: .8em;
+}
+
+.info .channel .metadata .info span {
+  font-size: .9em;
+}
+
+.info .channel .metadata .info span:last-child {
+  color: #aaa;
+}
+
+.info .channel .subscribe {
+  color: red;
+  text-transform: uppercase;
+  padding: 0 1.5em;
+  font-weight: bold;
+  font-size: .7em;
+}
+
+/* ? ########## up next ########## */
+.upNext {
+  padding: .3em .3em;
+}
+
+.upNext > .title {
+  font-size: .8em;
+  color: #aaa;
+}
+
+.upNext ul {
+  margin-top: .5em;
+}
+
+.upNext .items {
+  display: flex;
+  gap: 1em;
+}
+
+.upNext .items .img {
+  flex-basis: 30%;
+}
+
+.upNext .items .img img {
+  width: 100%;
+}
+
+.upNext .items .itemInfo {
+  flex-basis: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: .4em;
+}
+
+.upNext .items .itemInfo {
+  font-size: .8em;
+}
+
+.upNext .items .itemInfo .name,
+.upNext .items .itemInfo .views {
+  font-size: .7em;
+}
+
+.upNext .items .moreBtn {
+  flex-basis: 5%;
+  height: 100%;
+}
+
+.infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+
+@media (min-width:750px) {
+  .infoAndUpNext {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .infoAndUpNext .info{
+    flex-basis: 65%;
+  }
+  
+  .infoAndUpNext .upNext{
+    flex-basis: 35%;
+  }
 }
